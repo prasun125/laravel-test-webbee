@@ -95,6 +95,7 @@ class MenuController extends BaseController
      */
 
     public function getMenuItems() {
-        throw new \Exception('implement in coding task 3');
+        //throw new \Exception('implement in coding task 3');
+        return Category::with('children')->whereNull('parent_id')->orderBy('name', 'asc')->get();
     }
 }
